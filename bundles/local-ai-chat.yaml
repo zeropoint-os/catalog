@@ -1,0 +1,17 @@
+name: local-ai-chat
+modules:
+  - ollama
+  - openwebui
+
+links:
+  openwebui-ollama:
+    - module: openwebui
+      bind:
+        ollama_endpoint: "${ollama.ollama_api_url}"
+
+exposures:
+  openwebui-http:
+    module: openwebui
+    protocol: http
+    module_port: 8080
+    description: OpenWebUI chat interface

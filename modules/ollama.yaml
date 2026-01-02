@@ -1,0 +1,5 @@
+name: ollama
+repo: https://github.com/zeropoint-os/ollama
+commit: 4c432cf4ea65fb35cfe22833a0191872e5383c2a
+type: terraform
+description: Local LLM runtime
