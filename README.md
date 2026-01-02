@@ -1,4 +1,4 @@
-# Zeropoint Catalog
+# Zeropoint Modules Default Catalog
 
 This repository is the **official Zeropoint catalog**.
 
