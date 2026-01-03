@@ -65,8 +65,7 @@ Example:
 
 ```yaml
 name: ollama
-repo: https://github.com/zeropoint-os/ollama
-commit: 4c432cf4ea65fb35cfe22833a0191872e5383c2a
+source: https://github.com/zeropoint-os/ollama@5cd011a3c9fd0e527d227e880871db7e2c749e2d
 type: terraform
 description: Local LLM runtime
 ```
@@ -76,11 +75,10 @@ description: Local LLM runtime
 - `name`
   Stable identifier for the module.
 
-- `repo`
-  Git repository URL.
-
-- `commit`
-  **Required.** A full 40-character git commit SHA.
+- `source`
+  Git repository URL with commit hash.
+  Format: `https://github.com/owner/repo@<commit-sha>`
+  The commit SHA must be a full 40-character git commit hash.
   Symbolic refs (branches, tags, HEAD) are not allowed.
 
 - `type`
