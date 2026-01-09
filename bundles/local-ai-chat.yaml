@@ -1,4 +1,5 @@
 name: local-ai-chat
+description: Local AI chat stack with Ollama LLM and OpenWebUI interface
 modules:
   - ollama
   - openwebui
