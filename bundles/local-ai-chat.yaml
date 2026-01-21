@@ -1,14 +1,19 @@
 name: local-ai-chat
-description: Local AI chat stack with Ollama LLM and OpenWebUI interface
+description: Local AI chat stack with Ollama, OpenWebUI and SearXNG
 modules:
   - ollama
   - openwebui
+  - searxng
 
 links:
-  openwebui-ollama:
+  # Link OpenWebUI to Ollama and SearXNG
+  openwebui-ollama-searxng:
     - module: openwebui
       bind:
-        ollama_endpoint: "${ollama.ollama_api_url}"
+        ollama_endpoint: "${ollama.ollama_api_url}" # Link to Ollama API
+    - module: searxng
+      bind:
+        searxng_url: "${searxng.searxng_query_url}" # Link to SearXNG search URL
 
 exposures:
   openwebui-http:
