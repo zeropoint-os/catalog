@@ -1,4 +1,4 @@
 name: openwebui
-source: https://github.com/zeropoint-os/openwebui@c1e4367382b073213742022b880c3227c1dfdaa2
+source: https://github.com/zeropoint-os/openwebui@e3dc08a2dd153d76b23c252ba1f126e8471690da
 type: terraform
 description: Local LLM chat interface

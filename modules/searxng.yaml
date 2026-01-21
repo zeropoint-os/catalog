@@ -1,0 +1,4 @@
+name: searxng
+source: https://github.com/zeropoint-os/searxng.git@22ed943bc713f672c4092d6129aec5c07de22ba9
+type: terraform
+description: Privacy-respecting metasearch engine
