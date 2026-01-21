@@ -11,8 +11,6 @@ links:
     - module: openwebui
       bind:
         ollama_endpoint: "${ollama.ollama_api_url}" # Link to Ollama API
-    - module: searxng
-      bind:
         searxng_url: "${searxng.searxng_query_url}" # Link to SearXNG search URL
 
 exposures:
