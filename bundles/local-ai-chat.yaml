@@ -8,13 +8,15 @@ modules:
 links:
   # Link OpenWebUI to Ollama and SearXNG
   openwebui-ollama-searxng:
+    - module: ollama
+    - module: searxng
     - module: openwebui
       bind:
         ollama_endpoint: "${ollama.ollama_api_url}" # Link to Ollama API
         searxng_url: "${searxng.searxng_query_url}" # Link to SearXNG search URL
 
 exposures:
-  openwebui-http:
+  ai-chat:
     module: openwebui
     protocol: http
     module_port: 8080
