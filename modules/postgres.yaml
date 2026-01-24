@@ -1,4 +1,4 @@
 name: postgres
-source: https://github.com/zeropoint-os/postgres.git@eae574876e5c92158c0247a9cf15d1ef76645f05
+source: https://github.com/zeropoint-os/postgres.git@030733cea3cb35e18cc80f1448685d253181cb9b
 type: terraform
 description: PostgreSQL relational database system
