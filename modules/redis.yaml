@@ -1,0 +1,4 @@
+name: redis
+source: https://github.com/zeropoint-os/redis.git@d91db3a067d664640b709488b96fe418ad44d8a8
+type: terraform
+description: Redis in-memory data structure store
