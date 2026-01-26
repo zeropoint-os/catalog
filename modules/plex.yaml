@@ -1,0 +1,4 @@
+name: plex
+source: https://github.com/zeropoint-os/plex.git@455c5893f9bff2e709aaa8989cf6bd203bc1099d
+type: terraform
+description: Plex media server
