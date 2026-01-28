@@ -1,0 +1,4 @@
+name: jellyfin
+source: https://github.com/zeropoint-os/jellyfin.git@bae841b91c50d4b075483aa6af4637b90584d455
+type: terraform
+description: Jellyfin media server
