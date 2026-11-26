@@ -1,0 +1,4 @@
+name: immich
+source: https://github.com/zeropoint-os/immich.git@039f58193b6370c42818dfea70d18f091a9bf2a4
+type: terraform
+description: Self-hosted photo and video management

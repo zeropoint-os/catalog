@@ -88,6 +88,73 @@ description: Local LLM runtime
 - `description`
   Human-readable summary.
 
+- `parameters`
+  Optional mapping of module input names to presentation metadata and default
+  expressions. Parameter metadata lets clients render human-friendly controls
+  without moving resolution logic out of the agent.
+
+### Parameter fields
+
+Each entry in `parameters` may define:
+
+- `label`
+  Human-readable name shown by clients.
+
+- `group`
+  Logical section used to organize related parameters.
+
+- `control`
+  Preferred input control, such as `path`.
+
+- `description`
+  Human-readable explanation of the parameter and its behavior.
+
+- `linkable`
+  Whether a bundle or another module may provide the value through a link.
+
+- `default`
+  A graph-aware default expression evaluated by the agent.
+
+A default contains an ordered `tokens` list. Clients may display this list as
+an expression, while the agent resolves it in order:
+
+```yaml
+parameters:
+  data_dir:
+    label: Data directory
+    group: storage
+    control: path
+    description: Stores persistent data for this module instance.
+    linkable: true
+    default:
+      strategy: module_default
+      tokens:
+        - kind: reference
+          scope: global
+          name: ZP_MODULE_STORAGE
+        - kind: literal
+          value: /
+        - kind: reference
+          scope: context
+          name: module_id
+        - kind: literal
+          value: /data
+```
+
+Literal tokens have `kind: literal` and a `value`. Reference tokens have
+`kind: reference`, a `scope`, and a `name`. Supported reference scopes are:
+
+- `global` for agent-wide values
+- `context` for values from the current module instance
+- `parameter` for another parameter in the same module
+
+The optional default `strategy` explains execution behavior:
+
+- `module_default` is the module's automatic default when no value is supplied.
+- `inherit` derives a value from another parameter. An inherited parameter
+  remains available through its parent resource until it is individually
+  overridden or linked.
+
 ### Guarantees
 
 - The referenced code cannot change

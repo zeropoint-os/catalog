@@ -1,0 +1,4 @@
+name: youtube-dl
+source: https://github.com/zeropoint-os/youtube-dl.git@23b845abb73c38cf7548320efc302bce827ab609
+type: terraform
+description: Web interface for downloading video and audio
