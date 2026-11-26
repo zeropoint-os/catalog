@@ -1,0 +1,4 @@
+name: echo
+source: https://github.com/zeropoint-os/echo.git@4c8b39644e2745de0c4530b5fd35a7c6d19b1ce9
+type: terraform
+description: Minimal HTTP module for end-to-end Zeropoint testing

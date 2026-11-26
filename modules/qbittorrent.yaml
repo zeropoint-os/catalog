@@ -1,0 +1,4 @@
+name: qbittorrent
+source: https://github.com/zeropoint-os/qbittorrent.git@887d3b98da7c6686445a7658600d456f6e1e335e
+type: terraform
+description: BitTorrent client with a web interface

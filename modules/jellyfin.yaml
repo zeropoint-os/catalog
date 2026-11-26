@@ -1,4 +1,160 @@
 name: jellyfin
-source: https://github.com/zeropoint-os/jellyfin.git@bae841b91c50d4b075483aa6af4637b90584d455
+source: https://github.com/zeropoint-os/jellyfin.git@eb8e9e3e2be58a471f95e7c86494202c465c0547
 type: terraform
 description: Jellyfin media server
+parameters:
+  config_dir:
+    label: Configuration directory
+    group: storage
+    control: path
+    description: Stores Jellyfin configuration for this module instance.
+    linkable: true
+    default:
+      strategy: module_default
+      tokens:
+        - kind: reference
+          scope: global
+          name: ZP_MODULE_STORAGE
+        - kind: literal
+          value: /
+        - kind: reference
+          scope: context
+          name: module_id
+        - kind: literal
+          value: /.config
+  cache_dir:
+    label: Cache directory
+    group: storage
+    control: path
+    description: Stores Jellyfin cache data for this module instance.
+    linkable: true
+    default:
+      strategy: module_default
+      tokens:
+        - kind: reference
+          scope: global
+          name: ZP_MODULE_STORAGE
+        - kind: literal
+          value: /
+        - kind: reference
+          scope: context
+          name: module_id
+        - kind: literal
+          value: /.cache
+  media_library_path:
+    label: Media library
+    group: media
+    control: path
+    description: Base directory for Jellyfin media libraries.
+    linkable: true
+    default:
+      strategy: module_default
+      tokens:
+        - kind: reference
+          scope: global
+          name: ZP_MODULE_STORAGE
+        - kind: literal
+          value: /
+        - kind: reference
+          scope: context
+          name: module_id
+        - kind: literal
+          value: /media
+  movies_path:
+    label: Movies
+    group: libraries
+    control: path
+    description: Defaults beneath the media library; override or link it for a dedicated movie mount.
+    linkable: true
+    default:
+      strategy: inherit
+      tokens:
+        - kind: reference
+          scope: parameter
+          name: media_library_path
+        - kind: literal
+          value: /movies
+  tv_path:
+    label: TV shows
+    group: libraries
+    control: path
+    description: Defaults beneath the media library; override or link it for a dedicated TV mount.
+    linkable: true
+    default:
+      strategy: inherit
+      tokens:
+        - kind: reference
+          scope: parameter
+          name: media_library_path
+        - kind: literal
+          value: /tv
+  music_path:
+    label: Music
+    group: libraries
+    control: path
+    description: Defaults beneath the media library; override or link it for a dedicated music mount.
+    linkable: true
+    default:
+      strategy: inherit
+      tokens:
+        - kind: reference
+          scope: parameter
+          name: media_library_path
+        - kind: literal
+          value: /music
+  music_videos_path:
+    label: Music videos
+    group: libraries
+    control: path
+    description: Defaults beneath the media library; override or link it for a dedicated music video mount.
+    linkable: true
+    default:
+      strategy: inherit
+      tokens:
+        - kind: reference
+          scope: parameter
+          name: media_library_path
+        - kind: literal
+          value: /music-videos
+  books_path:
+    label: Books
+    group: libraries
+    control: path
+    description: Defaults beneath the media library; override or link it for a dedicated book mount.
+    linkable: true
+    default:
+      strategy: inherit
+      tokens:
+        - kind: reference
+          scope: parameter
+          name: media_library_path
+        - kind: literal
+          value: /books
+  photos_path:
+    label: Photos
+    group: libraries
+    control: path
+    description: Defaults beneath the media library; override or link it for a dedicated photo mount.
+    linkable: true
+    default:
+      strategy: inherit
+      tokens:
+        - kind: reference
+          scope: parameter
+          name: media_library_path
+        - kind: literal
+          value: /photos
+  home_videos_path:
+    label: Home videos
+    group: libraries
+    control: path
+    description: Defaults beneath the media library; override or link it for a dedicated home video mount.
+    linkable: true
+    default:
+      strategy: inherit
+      tokens:
+        - kind: reference
+          scope: parameter
+          name: media_library_path
+        - kind: literal
+          value: /home-videos
